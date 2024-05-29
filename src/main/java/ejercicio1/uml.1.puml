@@ -1,0 +1,18 @@
+@startuml
+interface GlamourFinancial {
+    +getStockPrice(String): double
+    +setStockPrice(String, double): void
+    +calculateMarketValue(int): double
+    +calculatePriceToBookRatio(double, int): double
+}
+
+class FinancialModel {
+    -stockPrices: Map<String, Double>
+    +getStockPrice(String): double
+    +setStockPrice(String, double): void
+    +calculateMarketValue(int): double
+    +calculatePriceToBookRatio(double, int): double
+}
+
+GlamourFinancial <|.. FinancialModel
+@enduml
