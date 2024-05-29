@@ -1,4 +1,5 @@
 package Ejercicio2;
+//clase sujeto
 public class Subject {
     private String name;
 
