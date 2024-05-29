@@ -40,5 +40,10 @@ public class TrainingSystem {
             employee.getRecord().addCertificate("Certified in Course");
         }
     }
+
+    public Subject findSubjectByName(String subjectName) {
+
+        return null;
+    }
 }
 

@@ -1,5 +1,4 @@
-package ejercicio1;
-
+package Ejercicio2;
 public class FinancialVista {
     public void displayEnrollmentSuccess(String employeeName, String courseTitle) {
         System.out.println(employeeName + " has been successfully enrolled in " + courseTitle + ".");
@@ -13,4 +12,3 @@ public class FinancialVista {
         System.out.println("Certificate issued to " + employeeName + ".");
     }
 }
-
