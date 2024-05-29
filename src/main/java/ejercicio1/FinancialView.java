@@ -1,4 +1,4 @@
-package org.example;
+package ejercicio1 ;
 public class FinancialView {
     public void displayStockPrice(String market, double price) {
         System.out.println("Market: " + market + " | Current stock price: " + price);

@@ -1,4 +1,4 @@
-package org.example;
+package ejercicio1;
 public class FinancialApp {
     public static void main(String[] args) {
         FinancialModel model = new FinancialModel();

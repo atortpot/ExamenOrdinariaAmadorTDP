@@ -1,4 +1,4 @@
-package org.example;
+package ejercicio1;
 public interface GlamourFinancial {
     double getStockPrice(String market);
     void setStockPrice(String market, double price);
