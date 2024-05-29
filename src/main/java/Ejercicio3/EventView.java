@@ -1,4 +1,6 @@
 package Ejercicio3;
+import java.time.LocalDateTime;
+
 public class EventView {
     public void displayEventDetails(String title, LocalDateTime dateTime, String location) {
         System.out.println("Event: " + title + " at " + location + " on " + dateTime);
