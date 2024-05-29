@@ -1,0 +1,46 @@
+@startuml
+class Subject {
+    -name: String
+    +getName(): String
+}
+
+class Course {
+    -title: String
+    -subjects: List<Subject>
+    +addSubject(Subject): void
+    +getTitle(): String
+    +getSubjects(): List<Subject>
+}
+
+class Employee {
+    -name: String
+    -record: AcademicRecord
+    +getName(): String
+    +getRecord(): AcademicRecord
+}
+
+class AcademicRecord {
+    -grades: Map<Subject, Double>
+    -certificates: List<String>
+    +addGrade(Subject, double): void
+    +calculateAverage(): double
+    +addCertificate(String): void
+    +getGrades(): Map<Subject, Double>
+    +getCertificates(): List<String>
+}
+
+class TrainingSystem {
+    -employees: List<Employee>
+    -courses: List<Course>
+    +enrollEmployee(Employee, Course): void
+    +recordGrade(Employee, Subject, double): void
+    +issueCertificate(Employee): void
+    +addEmployee(Employee): void
+    +addCourse(Course): void
+}
+
+Subject "1" <-- "*" Course
+Employee "1" *-- "1" AcademicRecord
+TrainingSystem "1" o-- "*" Employee
+TrainingSystem "1" o-- "*" Course
+@enduml
