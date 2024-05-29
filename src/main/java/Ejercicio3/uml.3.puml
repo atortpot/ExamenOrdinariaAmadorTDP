@@ -1,0 +1,52 @@
+@startuml
+class Event {
+    -title: String
+    -dateTime: LocalDateTime
+    -location: String
+    +getTitle(): String
+    +getDateTime(): LocalDateTime
+    +getLocation(): String
+}
+
+class Attendee {
+    -name: String
+    -email: String
+    +getName(): String
+    +getEmail(): String
+}
+
+class Feedback {
+    -event: Event
+    -attendee: Attendee
+    -comments: String
+    -rating: int
+    +getComments(): String
+    +getRating(): int
+    +getEvent(): Event
+    +getAttendee(): Attendee
+}
+
+class EventView {
+    +displayEventDetails(String, LocalDateTime, String): void
+    +displayAttendeeRegistered(String, String): void
+    +displayFeedbackReceived(String, String): void
+    +displayError(String): void
+}
+
+class EventController {
+    -events: List<Event>
+    -attendees: List<Attendee>
+    -feedbacks: List<Feedback>
+    -view: EventView
+    +createEvent(String, LocalDateTime, String): void
+    +registerAttendee(String, String, String): void
+    +receiveFeedback(String, String, String, int): void
+}
+
+Event "1" <-- "*" Feedback
+Attendee "1" <-- "*" Feedback
+EventController "1" o-- "*" Event
+EventController "1" o-- "*" Attendee
+EventController "1" o-- "*" Feedback
+EventController "1" o-- "1" EventView
+@enduml
